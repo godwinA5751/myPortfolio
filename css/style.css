@@ -320,7 +320,7 @@ section {
 
   }
   100% {
-    transform: translateX(-52.1%);
+    transform: translateX(-51.7%);
   }
 }
 
@@ -352,6 +352,14 @@ section {
   from{ transform: rotate(0deg); }
   to{ transform: rotate(360deg); }
 }
+
+.bounce { animation: bounce 3s infinite; }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.js{ border-radius: 15px; }
 
 /* ===== CONTACT ===== */
 #contact h3 { text-align: center; font-size: 2.5rem; margin-bottom: 40px; }
