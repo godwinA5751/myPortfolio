@@ -50,11 +50,11 @@ export class ContactForm {
   }
 
   submitForm() {
-    // Clear the form fields before submission
-    this.contactForm.reset();
-
     // Submit the form to Formspree
     this.contactForm.submit();
+    
+    // Clear the form fields before submission
+    this.contactForm.reset();
   }
 
   showMessage(message, type) {
