@@ -13,7 +13,7 @@ export class ContactForm {
 
   handleSubmit(e) {
     e.preventDefault();
-    
+
     if (!this.validateForm()) {
       return;
     }
@@ -50,19 +50,11 @@ export class ContactForm {
   }
 
   submitForm() {
-    // In a real application, you would send the form data to a server here
-    // For demo purposes, we'll just show a success message
-    
-    this.showMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
+    // Clear the form fields before submission
     this.contactForm.reset();
-    
-    // Simulate form submission (remove in production)
-    console.log('Form submitted with data:', {
-      name: document.getElementById('name').value,
-      phone: document.getElementById('phone').value,
-      email: document.getElementById('email').value,
-      message: document.getElementById('message').value
-    });
+
+    // Submit the form to Formspree
+    this.contactForm.submit();
   }
 
   showMessage(message, type) {
