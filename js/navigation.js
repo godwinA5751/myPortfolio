@@ -64,10 +64,12 @@ export class Navigation {
     const opened = this.navMenu.classList.toggle('active');
     this.hamburger.textContent = opened ? '×' : '☰';
     this.hamburger.setAttribute('aria-expanded', opened ? 'true' : 'false');
+    document.body.classList.toggle('no-scroll');
   }
 
   closeMobileMenu() {
     this.navMenu.classList.remove('active');
+    document.body.classList.remove('no-scroll');
     this.hamburger.textContent = '☰';
     this.hamburger.setAttribute('aria-expanded', 'false');
   }

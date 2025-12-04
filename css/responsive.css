@@ -8,23 +8,24 @@
 
 @media screen and (max-width: 768px) {
   .hamburger { display: block; }
-
+  
   .nav__menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 50%;
-    height: 100%;
-    background: transparent;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    transition: var(--transition);
-    z-index: 1000;
-    backdrop-filter: blur(20px);
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-  }
+  position: fixed;
+  top: 76px; /* Set the top position to the height of your header */
+  right: -100%;
+  width: 50%;
+  height: calc(100vh - 76px); /* Calculate the height to fill the remaining space */
+  background: transparent;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  transition: var(--transition);
+  z-index: 1000;
+  backdrop-filter: blur(20px);
+  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+}
+
   .nav__menu.active { right: 0; }
 
   .myPhoto { width: 250px; height: 250px; }
