@@ -20,7 +20,7 @@ export class Projects {
                  loading="lazy">
           </div>
           <h4>${project.title || 'Coming Soon'}</h4>
-          <p>Tools used: ${project.tools || 'Not specified'}</p>
+          <p>Tech Stack: ${project.tools || 'Not specified'}</p>
           <div class="project-links">
             <a href="${project.link || '#'}" 
                class="project-a ${!hasLink ? 'disabled' : ''}" 
