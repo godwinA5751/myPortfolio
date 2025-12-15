@@ -22,5 +22,11 @@ export const projectsData =  [
     title: 'TimberLand',
     tools: 'HTML, CSS, JS.',
     link: 'https://godwina5751.github.io/TimberLand.git.com/'
-  }
+  }, 
+  {
+  image: 'images/uniportal.jpeg',
+  title: 'Uni-portal',
+  tools: 'HTML, CSS, JS.',
+  link: 'https://uni-portal-edu.vercel.app'
+}
 ]
