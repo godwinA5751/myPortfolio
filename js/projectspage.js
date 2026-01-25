@@ -28,5 +28,11 @@ export const projectsData =  [
   title: 'Uni-portal',
   tools: 'HTML, CSS, JS.',
   link: 'https://uni-portal-edu.vercel.app'
+},
+{
+  image: 'images/weather.jpeg',
+  title: 'show-forecast(Weather App)', 
+  tools: 'REACT, CSS', 
+  link: 'https://show-forecast.vercel.app'
 }
 ]
