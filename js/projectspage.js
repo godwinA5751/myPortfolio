@@ -32,7 +32,13 @@ export const projectsData =  [
 {
   image: 'images/weather.jpeg',
   title: 'show-forecast(Weather App)', 
-  tools: 'REACT, CSS', 
+  tools: 'REACT, CSS, API', 
   link: 'https://show-forecast.vercel.app'
+},
+{
+  image: 'images/eduTrack.jpeg',
+  title: 'EduTrack(Acadamic Tracker)', 
+  tools: 'REACT, TAILWIND, SUPABASE', 
+  link: 'https://edu-track-progress.vercel.app'
 }
 ]
