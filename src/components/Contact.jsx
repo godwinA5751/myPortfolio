@@ -72,7 +72,7 @@ function Contact() {
         setTimeout(() => setStatus({ message: "", type: "" }), 3000);
       } else {
         const serverMessage = data?.error || data?.message || response.statusText || "Something went wrong.";
-        setStatus({ message: serverMessage, type: "error" });
+        setStatus({ message: "Server Error", type: "error" });
         console.error("Form submission error:", serverMessage, data);
         setTimeout(() => setStatus({ message: "", type: "" }), 3000);
       }
