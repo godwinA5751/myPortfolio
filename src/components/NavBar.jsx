@@ -75,7 +75,7 @@ function Navbar() {
   }, []);
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-white/10 dark:bg-sky-500/10 rounded-t-none rounded-b-2xl backdrop-blur-md border border-white/10 dark:border-slate-900/20 shadow-xl">
+    <header className="fixed w-full top-0 z-50 bg-white/10 dark:bg-sky-900/10 rounded-t-none rounded-b-2xl backdrop-blur-md border border-white/10 dark:border-slate-900/20 shadow-xl">
       <nav className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
 
         {/* Logo */}

@@ -2,9 +2,9 @@ import { useState } from "react";
 import Reveal from "./Reveal";
 
 const inputs = [
-  {type: "text", name: "name", placeholder: "Name / Company"},
-  {type: "tel", name: "phone", placeholder: "Phone Number"},
-  {type: "email", name: "email", placeholder: "Email"},
+  { type: "text", name: "name", placeholder: "Name / Company" },
+  { type: "tel", name: "phone", placeholder: "Phone Number" },
+  { type: "email", name: "email", placeholder: "Email" },
 ]
 
 
@@ -53,20 +53,27 @@ function Contact() {
     if (!validateForm()) return;
 
     try {
+      const payload = { ...formData, _captcha: false };
+
       const response = await fetch("https://formspree.io/f/mdkqgykb", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
+
+      const data = await response.json().catch(() => ({}));
 
       if (response.ok) {
         setStatus({ message: "Message sent successfully!", type: "success" });
         setFormData({ name: "", phone: "", email: "", message: "" });
+        setTimeout(() => setStatus({ message: "", type: "" }), 3000);
       } else {
-        setStatus({ message: "Something went wrong.", type: "error" });
-        console.error("Form submission error:", response.statusText);
+        const serverMessage = data?.error || data?.message || response.statusText || "Something went wrong.";
+        setStatus({ message: serverMessage, type: "error" });
+        console.error("Form submission error:", serverMessage, data);
         setTimeout(() => setStatus({ message: "", type: "" }), 3000);
       }
     } catch (error) {

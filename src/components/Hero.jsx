@@ -1,4 +1,6 @@
 import Reveal from "./Reveal";
+import TypingEffect from "./TypingEffext";
+
 function Hero() {
   return (
     <section
@@ -40,9 +42,7 @@ function Hero() {
 
         {/* Role */}
         <Reveal>
-          <span className="bg-linear-to-r from-sky-500 to-cyan-500 bg-clip-text text-transparent text-xl md:text-2xl font-semibold">
-            Frontend Developer
-          </span>
+          <TypingEffect />
         </Reveal>
 
         {/* Description */}
