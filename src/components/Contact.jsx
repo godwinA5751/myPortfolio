@@ -15,7 +15,7 @@ function Contact() {
     email: "",
     message: "",
   });
-
+  const [buttonStatus, setButtonStatus] = useState("idle")
   const [status, setStatus] = useState({ message: "", type: "" });
 
   // Handle input change
@@ -24,6 +24,8 @@ function Contact() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+    // Reset button status when user edits the form so they can resend
+    setButtonStatus("idle");
   };
 
   // Validate form
@@ -53,6 +55,7 @@ function Contact() {
     if (!validateForm()) return;
 
     try {
+      setButtonStatus("loading")
       const payload = { ...formData, _captcha: false };
 
       const response = await fetch("https://formspree.io/f/mdkqgykb", {
@@ -67,19 +70,26 @@ function Contact() {
       const data = await response.json().catch(() => ({}));
 
       if (response.ok) {
+        setButtonStatus("success")
         setStatus({ message: "Message sent successfully!", type: "success" });
         setFormData({ name: "", phone: "", email: "", message: "" });
         setTimeout(() => setStatus({ message: "", type: "" }), 3000);
+        // Allow sending another message after a short confirmation period
+        setTimeout(() => setButtonStatus("idle"), 3000);
       } else {
+        setButtonStatus("error")
         const serverMessage = data?.error || data?.message || response.statusText || "Something went wrong.";
         setStatus({ message: "Server Error", type: "error" });
         console.error("Form submission error:", serverMessage, data);
         setTimeout(() => setStatus({ message: "", type: "" }), 3000);
+        setTimeout(() => setButtonStatus("idle"), 3000);
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      setButtonStatus("error")
       setStatus({ message: "Network error.", type: "error" });
+      console.error("Network error:", error);
       setTimeout(() => setStatus({ message: "", type: "" }), 3000);
+      setTimeout(() => setButtonStatus("idle"), 3000);
     }
   };
 
@@ -162,9 +172,13 @@ function Contact() {
               <Reveal>
                 <button
                   type="submit"
-                  className="cursor-pointer w-full bg-sky-500 hover:bg-sky-600 text-white dark:bg-sky-400 dark:hover:bg-sky-300 dark:text-slate-900 font-bold py-3 rounded-2xl transition"
+                  disabled={buttonStatus === "loading"}
+                  className={
+                    `w-full bg-sky-500 hover:bg-sky-600 text-white dark:bg-sky-400 dark:hover:bg-sky-300 dark:text-slate-900 font-bold py-3 rounded-2xl transition
+                      ${buttonStatus === "loading" ? "cursor-not-allowed" : "cursor-pointer"}
+                    `}
                 >
-                  Send Message
+                  {buttonStatus === "idle" ? "Send Message" : buttonStatus === "loading" ? "Sending..." : buttonStatus === "success" ? "Sent ✅" : "Send Message"}
                 </button>
               </Reveal>
 
