@@ -37,7 +37,7 @@ function About() {
 
           {/* Info */}
           <Reveal>
-            <div className="bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-white/40 
+            <div className="bg-white/30 dark:bg-slate-900/10 backdrop-blur-md border border-white/40 
                 dark:border-slate-700/50 p-6 rounded-xl shadow-xl shadow-sky-200/30 dark:shadow-black/30 space-y-4 text-slate-900 dark:text-white">
               <p>
                 I'm a passionate web developer with a keen interest in creating

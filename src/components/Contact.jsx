@@ -111,7 +111,7 @@ function Contact() {
 
           {/* Info */}
           <Reveal>
-            <div className="bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-white/40 dark:border-0 
+            <div className="bg-white/30 dark:bg-slate-900/10 backdrop-blur-md border border-white/40 dark:border-0 
                  dark:border-slate-700/50 p-6 rounded-xl shadow-xl shadow-sky-200/30 dark:shadow-black/30 space-y-4 md:mt-20">
               <h4 className="text-xl font-semibold bg-linear-to-r from-sky-500 to-cyan-500 bg-clip-text text-transparent">
                 Why get in touch with me?
@@ -128,7 +128,7 @@ function Contact() {
           <Reveal>
             <form
               onSubmit={handleSubmit}
-              className="bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-white/40 dark:border-0 dark:border-slate-700/50 p-6 rounded-xl shadow-xl shadow-sky-200/30 dark:shadow-black/30 space-y-4"
+              className="bg-white/30 dark:bg-sky-900/10 backdrop-blur-md border border-white/40 dark:border-0 dark:border-slate-700/50 p-6 rounded-xl shadow-xl shadow-sky-200/30 dark:shadow-black/30 space-y-4"
             >
               <h4 className="text-xl font-semibold bg-linear-to-r from-sky-500 to-cyan-500 bg-clip-text text-transparent">Inbox Me</h4>
 

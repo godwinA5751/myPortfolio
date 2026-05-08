@@ -16,7 +16,7 @@ const Row = ({ direction = "left", speed = "slow" }) => {
     <div className="carousel-row">
       <div className={`carousel-track ${direction} ${speed}`}>
         {[...skills, ...skills].map((skill, index) => (
-          <div className="card  bg-white/30 dark:bg-slate-900/30 backdrop-blur border border-white/40 dark:border-slate-700/50 
+          <div className="card  bg-white/30 dark:bg-slate-900/10 backdrop-blur border border-white/40 dark:border-slate-700/50 
                 p-6 rounded-xl shadow-xl shadow-sky-200/30 dark:shadow-black/30" key={index}>
             <img src={skill.icon} alt={skill.name} className="w-15 h-15 object-contain rounded-full" />
             <span className="text-sm font-medium text-slate-900 dark:text-white">{skill.name}</span>

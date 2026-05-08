@@ -21,7 +21,7 @@ function Project() {
           {projectsData.map((project, index) => (
             <div
               key={index}
-              className=" bg-white/30 dark:bg-slate-900/30 backdrop-blur border border-white/40
+              className=" bg-white/30 dark:bg-slate-900/10 backdrop-blur border border-white/40
                 dark:border-slate-700/50 p-6 rounded-xl shadow-xl shadow-sky-200/30 dark:shadow-black/30 overflow-hidden hover:shadow-lg transition-all duration-300"
             >
               {/* Image */}
