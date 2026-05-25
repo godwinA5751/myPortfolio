@@ -36,7 +36,7 @@ export const projectsData =  [
   link: 'https://show-forecast.vercel.app'
 },
 {
-  image: 'images/eduTrack.jpeg',
+  image: 'images/project_eduTrack.png',
   title: 'EduTrack(Acadamic Tracker)', 
   tools: 'REACT, TAILWIND, SUPABASE', 
   link: 'https://edu-track-progress.vercel.app'
