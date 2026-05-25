@@ -42,7 +42,7 @@ export const projectsData =  [
   link: 'https://edu-track-progress.vercel.app'
 },
 {
-  image: 'images/mishpacha.jpeg',
+  image: 'images/project_mishpacha.png',
   title: 'Mishpacha Hub(Family Organizer)', 
   tools: 'REACT, TAILWIND', 
   link: 'https://mishpacha-hub.vercel.app'
