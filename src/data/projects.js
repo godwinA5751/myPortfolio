@@ -38,7 +38,7 @@ export const projectsData =  [
 {
   image: 'images/project_eduTrack.png',
   title: 'EduTrack(Acadamic Tracker)', 
-  tools: 'REACT, TAILWIND, SUPABASE', 
+  tools: 'REACT, TAILWIND, SUPABASE, EXPRESS', 
   link: 'https://edu-track-progress.vercel.app'
 },
 {

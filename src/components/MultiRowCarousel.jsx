@@ -9,6 +9,7 @@ const skills = [
     { name: "Tailwind", icon: "/images/tailwind-css (1).svg" },
     { name: "NextJs", icon: "/images/nextjs.png" },
     { name: "SASS", icon: "/images/sass.png" },
+    { name: "ExpressJs", icon: "/images/express.png" },
   ];
 
 const Row = ({ direction = "left", speed = "slow" }) => {
